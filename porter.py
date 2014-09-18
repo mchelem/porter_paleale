@@ -1,4 +1,20 @@
 #!/usr/bin/env python
+"""
+Porter 4.0 client
+
+Quick explanation of output formats
+
+Porter (Secondary Structure):
+    H = Helix   (DSSP classes H, G and I)
+    E = Strand  (DSSP classes E and B)
+    C = Coil    (DSSP classes S, T and .)
+
+PaleAle (Relative Solvent Accessibility):
+    B = very buried      (<=4% accessible)
+    b = somewhat buried  (>4% and <=25% accessible)
+    e = somewhat exposed (>25% and <=50% accessible)
+    E = very exposed     (>50% accessible)
+"""
 import re
 import requests
 import time
