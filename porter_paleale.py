@@ -26,7 +26,6 @@ Server documentation: http://distillf.ucd.ie/porterpaleale/quickhelp.html
 import re
 import requests
 import time
-from bs4 import BeautifulSoup
 import sys
 
 
@@ -89,8 +88,10 @@ def predict(sequence, wait=2):
     prediction = None
     try:
         response.raise_for_status()
-        prediction_url = BeautifulSoup(response.text).a['href']
-        prediction = _retrieve_prediction_results(prediction_url, wait)
+        match = re.search(r'href=[\'"]?([^\'" >]+)', response.text)
+        if match:
+            prediction_url = match.group(0)
+            prediction = _retrieve_prediction_results(prediction_url, wait)
     except:
         raise Exception(
             "Could not fetch results from Porter Pale Ale 4.0 ({}, {})".format(
