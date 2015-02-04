@@ -1,4 +1,4 @@
-pyporter4
+Porter Pale Ale 4.0 Client
 =========
 
 Python Client for the Porter and Pale Ale servers http://distillf.ucd.ie/porterpaleale/
