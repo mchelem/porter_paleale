@@ -1,6 +1,6 @@
 from distutils.core import setup
 setup(
-    name='pyporter',
+    name='porter_paleale',
     version='1.0',
     py_modules=['porter_paleale'],
 )
