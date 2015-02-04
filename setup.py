@@ -3,4 +3,8 @@ setup(
     name='porter_paleale',
     version='1.0',
     py_modules=['porter_paleale'],
+    install_requires=[
+        "requests",
+        "beautifulsoup"
+    ]
 )
