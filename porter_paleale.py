@@ -88,9 +88,12 @@ def predict(sequence, wait=2):
     prediction = None
     try:
         response.raise_for_status()
-        match = re.search(r'href=[\'"]?([^\'" >]+)', response.text)
-        if match:
-            prediction_url = match.group(0)
+        links = re.findall(
+            'href=[\'"]?([^\'" >]+)',
+            response.text
+        )
+        if links:
+            prediction_url = links[0]
             prediction = _retrieve_prediction_results(prediction_url, wait)
     except:
         raise Exception(
