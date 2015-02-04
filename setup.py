@@ -5,6 +5,6 @@ setup(
     py_modules=['porter_paleale'],
     install_requires=[
         "requests",
-        "beautifulsoup"
+        "beautifulsoup4"
     ]
 )
